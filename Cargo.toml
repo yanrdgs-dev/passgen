@@ -1,8 +1,8 @@
 [package]
 name = "passgen"
 version = "0.1.0"
-edition = "2025"
-authors = "[Yan Santos Rodrigues <yansantosrodrigues.dev@gmail.com>]"
+edition = "2024"
+authors = ["Yan Santos Rodrigues <yansantosrodrigues.dev@gmail.com>"]
 license = "MIT OR Apache-2.0"
 description = "generate passwords easily on the CLI"
 readme = "README.md"
