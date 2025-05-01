@@ -21,31 +21,31 @@ fn main() {
         }
     };
 
+    println!("generating password with {} digits...", pass_size);
     let password = generate_password(pass_size);
     println!("generated password: {}", password);
 
     let file_path = get_file_path();
 
     save_to_file(&file_path, &password).expect("failed to write file.");
-
+    
+    println!("writing password...");
     println!("password saved at: {}", file_path.display());
 }
 
 fn generate_password(length: usize) -> String {
-    let charset: Vec<char> = [
-        'a'..='z',
-        'A'..='Z',
-        '0'..='9'
-    ]
-    .iter()
-    .flat_map(|range| range.clone())
-    .collect();
+    let lowercase: Vec<char> = ('a'..='z').collect();
+    let uppercase: Vec<char> = ('A'..='Z').collect();
+    let numbers: Vec<char> = ('0'..='9').collect();
+    let symbols: Vec<char> = "!@#$%&*+-=/?_".chars().collect();
     
+    let all_characters = [lowercase, uppercase, numbers, symbols].concat();
+
     let mut rng = rand::rng();
     let password: String = (0..length)
     .map(|_| {
-            let idx = rng.random_range(0..charset.len());
-            charset[idx]
+            let idx = rng.random_range(0..all_characters.len());
+            all_characters[idx]
         })
         .collect();
 
