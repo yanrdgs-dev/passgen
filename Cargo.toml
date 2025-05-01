@@ -1,8 +1,18 @@
 [package]
 name = "passgen"
 version = "0.1.0"
-edition = "2024"
+edition = "2025"
+authors = "[Yan Santos Rodrigues <yansantosrodrigues.dev@gmail.com>]"
+license = "MIT OR Apache-2.0"
+description = "generate passwords easily on the CLI"
+readme = "README.md"
+homepage = "https://github.com/yanrdgs-dev/passgen"
+repository = "https://github.com/yanrdgs-dev/passgen"
+keywords = ["cli", "password", "generator", "password-generator"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 rand = "0.9.1"
 dirs = "6.0.0"
+
+
